@@ -1,6 +1,9 @@
 import logo from '../assets/images/logo.svg';
 import '../assets/styles/App.css';
 
+import Person from './Person'; // ne treba extenzija ".js"
+import  { sum, pi, imeAplikacije } from './Utility'; // nismo importali num1 i num2
+
 import randomstring from 'randomstring';
 
 function App() {
@@ -10,7 +13,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Moja prva aplikacija</h1>
+        <h1>{imeAplikacije}</h1>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
