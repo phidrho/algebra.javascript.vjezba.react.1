@@ -1,5 +1,6 @@
 const person = {
-    name: "Max"
+    name: "Max",
+    godine: 20
 };
 
 export default person;

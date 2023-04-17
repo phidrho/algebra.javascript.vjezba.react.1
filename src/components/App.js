@@ -16,8 +16,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>{mojaVarijabla}</h1>
-        <h2>Učitano ime osobe je: {Osoba.name}</h2>
-        <p>Zbroj i umnožak je {zbrojIUmnozak}</p>
+        <h2>Učitano ime osobe je: {Osoba.name} i ima {Osoba.godine} godina.</h2>
+        <p>Zbroj 5 i 12 i umnožak sa PI je {zbrojIUmnozak}</p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
