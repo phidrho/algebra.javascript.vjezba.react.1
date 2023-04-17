@@ -2,11 +2,11 @@ import logo from '../assets/images/logo.svg';
 import '../assets/styles/App.css';
 
 import Osoba from './Person'; // ne treba extenzija ".js"
-import  { sum, pi, imeAplikacije as mojaVarijabla } from './Utility'; // nismo importali num1 i num2
+import  { sum, pi, imeAplikacije as mojaVarijabla, num1, num2 } from './Utility'; // nismo importali num1 i num2
 
 import randomstring from 'randomstring';
 
-var zbrojIUmnozak = sum(5, 12) * pi;
+var zbrojIUmnozak = sum(num1, num2) * pi;
 
 function App() {
   var rndstr = randomstring.generate();
@@ -17,7 +17,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>{mojaVarijabla}</h1>
         <h2>Učitano ime osobe je: {Osoba.name} i ima {Osoba.godine} godina.</h2>
-        <p>Zbroj 5 i 12 i umnožak sa PI je {zbrojIUmnozak}</p>
+        <p>Zbroj {num1} i {num2} i umnožak sa PI je {zbrojIUmnozak}</p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
