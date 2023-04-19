@@ -5,7 +5,17 @@ import {Person, num1, num2, sum, imeAplikacije as mojaVarijabla, pi, oduzimanje}
 
 import randomstring from 'randomstring';
 
+//vjezba JSX - 5.5.
+import { Komponenta1 } from './Komponenta1';
+import { Komponenta2 } from './Komponenta2';
+import Komponenta3 from './Komponenta3'; // može bez vitičastih zagrada jer je u komponenti export default
+
+
 var zbrojIUmnozak = sum(num1, num2) * pi;
+
+//vjezba JSX - 5.5.
+var mojString1 = "'MOJ STRING IZ VARIJABLE 1'";
+var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
 
 function App() {
   var rndstr = randomstring.generate();
@@ -35,6 +45,17 @@ function App() {
         >
           Learn React
         </a>
+
+        <h1>Učitane komponente iz JSX-a</h1>
+        <h2>Komponenta 1:</h2>
+        <Komponenta1 />
+
+        <h2>Komponenta 2:</h2>
+        <Komponenta2 podatak={mojString1} />
+
+        <h2>Komponenta 3:</h2>
+        <Komponenta3 podatak1={mojString1} podatak2={mojString2} />
+
       </header>
     </div>
   );
