@@ -13,11 +13,26 @@ import Komponenta3 from './Komponenta3'; // može bez vitičastih zagrada jer je
 //vjezba JSX - 5.6.
 import {GlavnaKomponenta} from './GlavnaKomponenta';
 
+//vjezba JSX - 5.7.
+import React from "react";
+
 var zbrojIUmnozak = sum(num1, num2) * pi;
 
 //vjezba JSX - 5.5.
 var mojString1 = "'MOJ STRING IZ VARIJABLE 1'";
 var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
+
+//vjezba JSX 5.7
+function WelcomeFunkcija(){
+  return (<h2>Welcome! Komponenta definirana funkcijom</h2>);
+}
+
+class WelcomeKlasa extends React.Component {
+  render(){
+    return(<h2>Welcome! Komponenta definirana klasom</h2>);
+  }
+}
+
 
 function App() {
   var rndstr = randomstring.generate();
@@ -48,7 +63,7 @@ function App() {
           Learn React
         </a>
 
-        <h1>Učitane komponente iz JSX-a</h1>
+        <h1>Učitane komponente iz JSX-a - 5.5</h1>
         <h2>Komponenta 1:</h2>
         <Komponenta1 />
 
@@ -58,7 +73,12 @@ function App() {
         <h2>Komponenta 3:</h2>
         <Komponenta3 podatak1={mojString1} podatak2={mojString2} />
 
+        <h1>Učitane komponente iz JSX-a - 5.6</h1>
         <GlavnaKomponenta />
+
+        <h1>Učitane komponente iz JSX-a - 5.7</h1>
+        <WelcomeFunkcija />
+        <WelcomeKlasa />
 
       </header>
     </div>
