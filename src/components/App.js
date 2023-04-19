@@ -10,6 +10,8 @@ import { Komponenta1 } from './Komponenta1';
 import { Komponenta2 } from './Komponenta2';
 import Komponenta3 from './Komponenta3'; // može bez vitičastih zagrada jer je u komponenti export default
 
+//vjezba JSX - 5.6.
+import {GlavnaKomponenta} from './GlavnaKomponenta';
 
 var zbrojIUmnozak = sum(num1, num2) * pi;
 
@@ -55,6 +57,8 @@ function App() {
 
         <h2>Komponenta 3:</h2>
         <Komponenta3 podatak1={mojString1} podatak2={mojString2} />
+
+        <GlavnaKomponenta />
 
       </header>
     </div>
