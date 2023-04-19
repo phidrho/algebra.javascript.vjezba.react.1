@@ -14,7 +14,8 @@ import Komponenta3 from './Komponenta3'; // može bez vitičastih zagrada jer je
 import {GlavnaKomponenta} from './GlavnaKomponenta';
 
 //vjezba JSX - 5.7.
-import React from "react";
+import WelcomeFunkcija from './WelcomeFunkcija';
+import WelcomeKlasa from './WelcomeKlasa';
 
 var zbrojIUmnozak = sum(num1, num2) * pi;
 
@@ -22,16 +23,8 @@ var zbrojIUmnozak = sum(num1, num2) * pi;
 var mojString1 = "'MOJ STRING IZ VARIJABLE 1'";
 var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
 
-//vjezba JSX 5.7
-function WelcomeFunkcija(){
-  return (<h2>Welcome! Komponenta definirana funkcijom</h2>);
-}
 
-class WelcomeKlasa extends React.Component {
-  render(){
-    return(<h2>Welcome! Komponenta definirana klasom</h2>);
-  }
-}
+//vjezba JSX - 5.7
 
 
 function App() {
