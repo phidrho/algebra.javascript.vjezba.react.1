@@ -19,6 +19,9 @@ import WelcomeKlasa from './WelcomeKlasa';
 
 //vjezba PROPS 5.8
 import React from "react";
+import KorisnikKlasa from './KorisnikKlasa';
+import KorisnikFunkcija from './KorisnikFunkcija';
+import KorisnikDijete from './KorisnikDijete';
 
 var zbrojIUmnozak = sum(num1, num2) * pi;
 
@@ -34,7 +37,8 @@ var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
 const korisnici = [
   {ime:"Marko", godine: 22},
   {ime:"Katarina", godine: 21},
-  {ime:"Nataša", godine: 20}
+  {ime:"Nataša", godine: 20},
+  {ime: "Sunčica", godine: 12}
 ];
 
 // - pretvaramo u App klasu
@@ -88,10 +92,17 @@ class App extends React.Component {
           <WelcomeFunkcija />
           <WelcomeKlasa />
 
+          <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine} />
+          <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine} />
+          <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine} />
+
+          <KorisnikDijete ime={korisnici[3].ime} godine={korisnici[3].godine}>
+            Ona voli plivati.
+          </KorisnikDijete>
         </header>
       </div>
     );
-                                        }
+  }
 }
 
 export default App;
