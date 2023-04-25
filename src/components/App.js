@@ -30,7 +30,14 @@ var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
 //vjezba JSX - 5.7
 
 
-//vjezba PROPS 5.8 - pretvaramo u App klasu
+//vjezba PROPS 5.8
+const korisnici = [
+  {ime:"Marko", godine: 22},
+  {ime:"Katarina", godine: 21},
+  {ime:"Nataša", godine: 20}
+];
+
+// - pretvaramo u App klasu
 class App extends React.Component {
 
 
