@@ -55,6 +55,18 @@ class App extends React.Component {
     dodatni_tekst: "Ona voli plivati i gnjuriti"
   }
 
+  //vjezba STATE 5.9 - komponenta nam je STATELESS a aplikacija je STATEFULL
+  promijeniGodine = () => {
+    //console.log("kliknuli smo na button");
+    const{korisnici} = this.state;
+    const noviKorisnici = korisnici.map(
+        korisnik => {
+          return {...korisnik, godine: korisnik.godine + 1};
+        }
+      );
+      this.setState({korisnici: noviKorisnici});
+  }
+
   render() {
 
     const {korisnici, dodatni_tekst} = this.state;
@@ -105,8 +117,8 @@ class App extends React.Component {
           <WelcomeFunkcija />
           <WelcomeKlasa />
 
-          <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine} />
-          <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine} />
+          <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine} onButtonClick={this.promijeniGodine}/>
+          <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine} onButtonClick={this.promijeniGodine}/>
           <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine} />
 
           <KorisnikDijete ime={korisnici[3].ime} godine={korisnici[3].godine}>
