@@ -34,18 +34,43 @@ var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
 
 
 //vjezba PROPS 5.8
-const korisnici = [
-  {ime:"Marko", godine: 22},
-  {ime:"Katarina", godine: 21},
-  {ime:"Nataša", godine: 20},
-  {ime: "Sunčica", godine: 12}
-];
+// const korisnici = [
+//   {ime:"Marko", godine: 22},
+//   {ime:"Katarina", godine: 21},
+//   {ime:"Nataša", godine: 20},
+//   {ime: "Sunčica", godine: 12}
+// ];
 
 // - pretvaramo u App klasu
 class App extends React.Component {
 
+  //vjezba STATE 5.9
+  state = {
+    korisnici: [
+      {ime:"Marko", godine: 22},
+      {ime:"Katarina", godine: 21},
+      {ime:"Nataša", godine: 20},
+      {ime: "Sunčica", godine: 12}
+    ],
+    dodatni_tekst: "Ona voli plivati i gnjuriti"
+  }
+
+  //vjezba STATE 5.9 - komponenta nam je STATELESS a aplikacija je STATEFULL
+  promijeniGodine = () => {
+    //console.log("kliknuli smo na button");
+    const{korisnici} = this.state;
+    const noviKorisnici = korisnici.map(
+        korisnik => {
+          return {...korisnik, godine: korisnik.godine + 1};
+        }
+      );
+      this.setState({korisnici: noviKorisnici});
+  }
 
   render() {
+
+    const {korisnici, dodatni_tekst} = this.state;
+
     var rndstr = randomstring.generate();
     console.log("Random string" + randomstring.generate());
 
@@ -92,12 +117,12 @@ class App extends React.Component {
           <WelcomeFunkcija />
           <WelcomeKlasa />
 
-          <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine} />
-          <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine} />
+          <KorisnikKlasa ime={korisnici[0].ime} godine={korisnici[0].godine} onButtonClick={this.promijeniGodine}/>
+          <KorisnikKlasa ime={korisnici[1].ime} godine={korisnici[1].godine} onButtonClick={this.promijeniGodine}/>
           <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine} />
 
           <KorisnikDijete ime={korisnici[3].ime} godine={korisnici[3].godine}>
-            Ona voli plivati.
+           {dodatni_tekst}
           </KorisnikDijete>
         </header>
       </div>
