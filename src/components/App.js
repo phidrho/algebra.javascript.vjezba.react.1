@@ -51,12 +51,13 @@ class App extends React.Component {
       {ime:"Katarina", godine: 21},
       {ime:"Nataša", godine: 20},
       {ime: "Sunčica", godine: 12}
-    ]
+    ],
+    dodatni_tekst: "Ona voli plivati i gnjuriti"
   }
 
   render() {
 
-    const {korisnici} = this.state;
+    const {korisnici, dodatni_tekst} = this.state;
 
     var rndstr = randomstring.generate();
     console.log("Random string" + randomstring.generate());
@@ -109,7 +110,7 @@ class App extends React.Component {
           <KorisnikFunkcija ime={korisnici[2].ime} godine={korisnici[2].godine} />
 
           <KorisnikDijete ime={korisnici[3].ime} godine={korisnici[3].godine}>
-            Ona voli plivati.
+           {dodatni_tekst}
           </KorisnikDijete>
         </header>
       </div>
