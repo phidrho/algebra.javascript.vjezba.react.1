@@ -34,18 +34,30 @@ var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
 
 
 //vjezba PROPS 5.8
-const korisnici = [
-  {ime:"Marko", godine: 22},
-  {ime:"Katarina", godine: 21},
-  {ime:"Nataša", godine: 20},
-  {ime: "Sunčica", godine: 12}
-];
+// const korisnici = [
+//   {ime:"Marko", godine: 22},
+//   {ime:"Katarina", godine: 21},
+//   {ime:"Nataša", godine: 20},
+//   {ime: "Sunčica", godine: 12}
+// ];
 
 // - pretvaramo u App klasu
 class App extends React.Component {
 
+  //vjezba STATE 5.9
+  state = {
+    korisnici: [
+      {ime:"Marko", godine: 22},
+      {ime:"Katarina", godine: 21},
+      {ime:"Nataša", godine: 20},
+      {ime: "Sunčica", godine: 12}
+    ]
+  }
 
   render() {
+
+    const {korisnici} = this.state;
+
     var rndstr = randomstring.generate();
     console.log("Random string" + randomstring.generate());
 
