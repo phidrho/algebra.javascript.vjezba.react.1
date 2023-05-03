@@ -138,7 +138,19 @@ class App extends React.Component {
 
 
           <h1>Lekcija liste (3.5.2023.) - koristimo "Korisnik.jsx"</h1>
+
           <Korisnik name="Goran" years={30} onNameChanged={this.handleNameChanged} />
+
+          {
+            korisnici.map((korisnik, index) => (
+              <Korisnik
+                key={korisnik.id}
+                name={korisnik.ime}
+                years={korisnik.godine}
+                onNameChanged={event => this.handleNameChanged(event, index)}
+              />
+            ))
+          }
 
         </header>
       </div>
