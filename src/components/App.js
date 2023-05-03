@@ -23,6 +23,10 @@ import KorisnikKlasa from './KorisnikKlasa';
 import KorisnikFunkcija from './KorisnikFunkcija';
 import KorisnikDijete from './KorisnikDijete';
 
+
+// vjezba LISTE 3.5.2023.
+import Korisnik from './Korisnik';
+
 var zbrojIUmnozak = sum(num1, num2) * pi;
 
 //vjezba JSX - 5.5.
@@ -45,12 +49,13 @@ var mojString2 = "'MOJ STRING IZ VARIJABLE 2'";
 class App extends React.Component {
 
   //vjezba STATE 5.9
+  // vjezba LISTE - dodajemo identifikator
   state = {
     korisnici: [
-      {ime:"Marko", godine: 22},
-      {ime:"Katarina", godine: 21},
-      {ime:"Nataša", godine: 20},
-      {ime: "Sunčica", godine: 12}
+      {id: 1, ime:"Marko", godine: 22},
+      {id: 2, ime:"Katarina", godine: 21},
+      {id: 3, ime:"Nataša", godine: 20},
+      {id: 4, ime: "Sunčica", godine: 12}
     ],
     dodatni_tekst: "Ona voli plivati i gnjuriti"
   }
@@ -65,6 +70,12 @@ class App extends React.Component {
         }
       );
       this.setState({korisnici: noviKorisnici});
+  }
+
+
+  //vjezba LISTE - koristi se u "Korisnik.jsx"
+  handleNameChanged = (event, index) => {
+    console.log("ime je promijenjeno");
   }
 
   render() {
@@ -124,6 +135,11 @@ class App extends React.Component {
           <KorisnikDijete ime={korisnici[3].ime} godine={korisnici[3].godine}>
            {dodatni_tekst}
           </KorisnikDijete>
+
+
+          <h1>Lekcija liste (3.5.2023.) - koristimo "Korisnik.jsx"</h1>
+          <Korisnik name="Goran" years={30} onNameChanged={this.handleNameChanged} />
+
         </header>
       </div>
     );
