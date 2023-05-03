@@ -76,6 +76,11 @@ class App extends React.Component {
   //vjezba LISTE - koristi se u "Korisnik.jsx"
   handleNameChanged = (event, index) => {
     console.log("ime je promijenjeno");
+    const {korisnici} = this.state;
+    const noviKorisnici = [...korisnici];
+    console.log(noviKorisnici);
+    noviKorisnici[index].ime = event.target.value;
+    this.setState({korisnici: noviKorisnici});
   }
 
   render() {
@@ -139,7 +144,7 @@ class App extends React.Component {
 
           <h1>Lekcija liste (3.5.2023.) - koristimo "Korisnik.jsx"</h1>
 
-          <Korisnik name="Goran" years={30} onNameChanged={this.handleNameChanged} />
+          {/* <Korisnik name="Goran" years={30} onNameChanged={this.handleNameChanged} /> */}
 
           {
             korisnici.map((korisnik, index) => (
