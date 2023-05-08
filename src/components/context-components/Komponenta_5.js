@@ -9,7 +9,7 @@ class Komponenta_5 extends React.Component {
         const{text, number} = this.context;
         const editText = (
             <p>
-                Komponenta 5 ispisuje {text} a poslan je broj: {number};
+                Komponenta 5 ispisuje {text}, a poslan je broj: {number}
             </p>
         );
 
