@@ -1,9 +1,10 @@
 // prvo je potrebno instalirati router
 // npm install react-router-dom
 import React from "react";
-// import Home from './Home'; // za kasnije
 import { Route, Link, Routes, BrowserRouter } from "react-router-dom";
-// import Adresa from './Adresa'; // za kasnije
+import Home from './Home';
+import Adresa from './Adresa';
+import Onama from './Onama';
 
 // KREIRAMO KOMPONENTU "Kontakt" UNUTAR ROUTERA (NIJE U VANJSKOM JSX-u)
 const Kontakt = () => {
@@ -20,7 +21,28 @@ const Kontakt = () => {
 export default function AppRouter() {
     return (
         <BrowserRouter>
-
+            <div>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                    </ul>
+                    <ul>
+                        <li><Link to="/adresa/">Adresa</Link></li>
+                    </ul>
+                    <ul>
+                        <li><Link to="/kontakt/">Kontakt</Link></li>
+                    </ul>
+                    <ul>
+                        <li><Link to="/onama/">O nama</Link></li>
+                    </ul>
+                </nav>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/adresa/" element={<Adresa />} />
+                    <Route path="/kontakt/" element={<Kontakt />} />
+                    <Route path="/onama/" element={<Onama />} />
+                </Routes>
+            </div>
         </BrowserRouter>
     );
 }
