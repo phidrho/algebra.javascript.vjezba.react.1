@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // API LINK:
 
@@ -18,6 +18,17 @@ import React from "react";
 // }
 
 export default function AppAPI() {
+    const [data, postaviPodatke] = useState(null);
+
+    useEffect(() => {
+        fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+        .then(response => response.json())
+        .then(nasaData => postaviPodatke(nasaData));
+    }, []);
+
+    if(!data) {
+        return <div>Loading NASA data</div>;
+    }
 
     const { title, url, explanation, copyright, hdurl } = data;
     return (
@@ -25,9 +36,10 @@ export default function AppAPI() {
             <h1>NASA-ina slika dana</h1>
             <h3>{title}</h3>
             <img src={url} alt={title} width={500} />
+            <p>© {copyright}</p>
+
             <p>{explanation}</p>
-            <p>{copyright}</p>
-            <a href={hdurl}>Za bolju rezoluciju kliknite ovdje</a>
+            <a href={hdurl}>Za bolju rezoluciju kliknite ovdje.</a>
         </div>
     );
 }
