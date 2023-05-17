@@ -28,9 +28,9 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    dodajJedan: () => dodajNaBrojacc(1),
-    oduzmiJedan: () => oduzmiSaBrojacaaBrojaca(1),
-    resetiraj: () => setirajBrojacrojac(0)
+    dodajJedan: () => dodajNaBrojac(1),
+    oduzmiJedan: () => oduzmiSaBrojaca(1),
+    resetiraj: () => setirajBrojac(0)
 };
 
 export default connect(
