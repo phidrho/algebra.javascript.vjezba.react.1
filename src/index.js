@@ -7,17 +7,26 @@ import './index.css';
 // import AppRouter from './components/AppRouter';
 // import AppAPI from './components/AppAPI';
 // import AppGraphQL from './components/AppGraphQL';
-import AppRedux from './components/AppRedux';
-import { reducer } from './components/utilities/ReduxFunkcije';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+// import AppRedux from './components/AppRedux';
 
+// vjezba 5.21 - Redux
+// import AppRedux from './components/AppRedux';
+// import { reducer } from './components/utilities/ReduxFunkcije';
+// import { createStore } from 'redux';
+// import { Provider } from 'react-redux';
+
+// vjezba 5.22 - Redux Thunk
+import AppReduxThunk from './components/AppReduxThunk';
+import { reducer } from './components/utilities/ReduxThunkFunkcije';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 root.render(
     // <App />
@@ -27,6 +36,7 @@ root.render(
     // <AppAPI />
     // <AppGraphQL />
     <Provider store = {store}>
-        <AppRedux />
+        {/* <AppRedux /> */}
+        <AppReduxThunk />
     </Provider>
 );
