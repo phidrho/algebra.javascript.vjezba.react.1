@@ -9,7 +9,9 @@ import './index.css';
 // import AppGraphQL from './components/AppGraphQL';
 import AppRedux from './components/AppRedux';
 import { reducer } from './components/utilities/ReduxFunkcije';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
