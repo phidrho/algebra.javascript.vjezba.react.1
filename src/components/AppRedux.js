@@ -1,6 +1,7 @@
 // prvo potrebno instalirati npm install redux react-redux
 import React from "react";
 import { connect } from "react-redux";
+import { dodajNaBrojac, oduzmiSaBrojaca, setirajBrojac } from "./utilities/ReduxFunkcije";
 
 
 function AppRedux({ brojac, dodajJedan, oduzmiJedan, resetiraj }) {
@@ -27,9 +28,9 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    dodajJedan: () => dodajNaBrojac(1),
-    oduzmiJedan: () => oduzmiSaBrojaca(1),
-    resetiraj: () => setirajBrojac(0)
+    dodajJedan: () => dodajNaBrojacc(1),
+    oduzmiJedan: () => oduzmiSaBrojacaaBrojaca(1),
+    resetiraj: () => setirajBrojacrojac(0)
 };
 
 export default connect(
