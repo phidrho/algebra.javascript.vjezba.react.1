@@ -8,8 +8,15 @@ import './index.css';
 // import AppAPI from './components/AppAPI';
 // import AppGraphQL from './components/AppGraphQL';
 import AppRedux from './components/AppRedux';
+import { reducer } from './components/utilities/ReduxFunkcije';
+import { Provider } from 'react-redux';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+const store = createStore(reducer);
+
 root.render(
     // <App />
     // <AppContext />
