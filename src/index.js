@@ -17,5 +17,7 @@ root.render(
     // <AppRouter />
     // <AppAPI />
     // <AppGraphQL />
-    <AppRedux />
+    <Provider store = {store}>
+        <AppRedux />
+    </Provider>
 );
