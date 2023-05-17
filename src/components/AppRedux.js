@@ -10,7 +10,7 @@ function AppRedux({ brojac, dodajJedan, oduzmiJedan, resetiraj }) {
             <p>
                 <span>
                     <button onClick={oduzmiJedan}> - </button>
-                    <span className="counter">Broj: {brojac}</span>
+                    <span className="counter"> Broj: {brojac} </span>
                     <button onClick={dodajJedan}> + </button>
                 </span>
             </p>
